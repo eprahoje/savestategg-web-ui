@@ -1,13 +1,5 @@
-# Agent Instructions for SaveStateGG Web UI
+<!-- BEGIN:nextjs-agent-rules -->
+# This is NOT the Next.js you know
 
-## Context
-You are a Senior Frontend Engineer. This repo is the Next.js (App Router) interface for SaveStateGG.
-
-## Rules
-- Use Tailwind CSS for all styling.
-- Prioritize Functional Components and Lucide React for icons.
-- Follow the contracts defined in `savestategg-docs/docs/specs/`.
-- Maintain TypeScript strictness.
-
-## References
-Data structure must match Spec 001 (Catalog Contract).
+This version has breaking changes — APIs, conventions, and file structure may all differ from your training data. Read the relevant guide in `node_modules/next/dist/docs/` before writing any code. Heed deprecation notices.
+<!-- END:nextjs-agent-rules -->
