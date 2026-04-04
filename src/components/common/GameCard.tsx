@@ -8,9 +8,10 @@ export type Game = {
 
 type GameCardProps = {
   game: Game;
+  priority?: boolean; // Nova prop opcional
 };
 
-export function GameCard({ game }: GameCardProps) {
+export function GameCard({ game, priority = false }: GameCardProps) {
   return (
     <div className="w-full transform transition-transform hover:scale-105">
       <div className="aspect-[3/4] w-full relative overflow-hidden rounded-md shadow-sm">
@@ -24,6 +25,8 @@ export function GameCard({ game }: GameCardProps) {
           alt={game.title}
           fill
           className="object-cover"
+          sizes="(max-width: 768px) 50vw, (max-width: 1200px) 25vw, 16vw"
+          priority={priority}
         />
       </div>
       <div className="mt-2 text-sm font-medium leading-snug truncate">{game.title}</div>
