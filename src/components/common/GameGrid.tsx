@@ -11,7 +11,7 @@ export function GameGrid({ games }: GameGridProps) {
         <GameCard
           key={`${game.title}-${index}`} 
           game={game}
-          priority={index < 4} 
+          preload={index < 4} 
         />
       ))}
     </div>
