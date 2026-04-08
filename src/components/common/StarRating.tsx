@@ -51,18 +51,18 @@ export function StarRating({
             {isHalf ? (
               <>
                 <Star
-                  className="h-5 w-5 text-neutral-700"
+                  className="h-5 w-5 text-neutral-700 fill-neutral-700"
                   aria-hidden="true"
                 />
                 <StarHalf
-                  className="absolute left-0 top-0 h-5 w-5 text-green-500"
+                  className="absolute left-0 top-0 h-5 w-5 text-green-500 fill-green-500"
                   aria-hidden="true"
                 />
               </>
             ) : (
               <Star
                 className={`h-5 w-5 ${
-                  isFull ? 'text-green-500' : 'text-neutral-700'
+                  isFull ? 'text-green-500 fill-green-500' : 'text-neutral-700 fill-neutral-700'
                 }`}
                 aria-hidden="true"
               />
