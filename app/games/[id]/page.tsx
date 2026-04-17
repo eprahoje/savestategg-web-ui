@@ -1,5 +1,6 @@
 import { GameCard } from "../../../src/components/common/GameCard";
 import { StarRating } from "../../../src/components/common/StarRating";
+import { LogAction } from "../../../src/components/common/LogAction";
 
 // Mock rápido para validar o layout da Spec 005
 const mockGameDetails = {
@@ -20,9 +21,14 @@ export default function GameDetailsPage() {
         <div className="md:col-span-1 flex flex-col gap-4">
           <GameCard game={mockGameDetails} preload />
           
-          <div className="bg-neutral-900 p-4 rounded-md border border-neutral-800 flex flex-col items-center gap-2">
-            <span className="text-xs font-bold text-neutral-400 uppercase tracking-wider">Your Rating</span>
-            <StarRating rating={0} isReadOnly={false} />
+          <div className="bg-neutral-900 p-4 rounded-md border border-neutral-800 flex flex-col items-center gap-4">
+            <LogAction gameTitle={mockGameDetails.title} />
+            
+            <div className="flex flex-col items-center gap-1 w-full border-t border-neutral-800 pt-4">
+               <span className="text-xs font-bold text-neutral-400 uppercase tracking-wider">Your Rating</span>
+               {/* Deixando apenas para visualização por enquanto */}
+               <StarRating rating={0} isReadOnly={false} />
+            </div>
           </div>
         </div>
 
