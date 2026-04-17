@@ -5,6 +5,13 @@ import { X } from 'lucide-react';
 
 import { StarRating } from './StarRating';
 
+function formatDateYYYYMMDD(date: Date): string {
+  const year = date.getFullYear();
+  const month = String(date.getMonth() + 1).padStart(2, '0');
+  const day = String(date.getDate()).padStart(2, '0');
+  return `${year}-${month}-${day}`;
+}
+
 export type LogModalProps = {
   gameTitle: string;
   isOpen: boolean;
@@ -12,9 +19,10 @@ export type LogModalProps = {
 };
 
 export function LogModal({ gameTitle, isOpen, onClose }: LogModalProps) {
-  const [playedAt, setPlayedAt] = useState('');
   const [review, setReview] = useState('');
   const [rating, setRating] = useState(0);
+
+  const today = formatDateYYYYMMDD(new Date());
 
   if (!isOpen) return null;
 
@@ -55,9 +63,9 @@ export function LogModal({ gameTitle, isOpen, onClose }: LogModalProps) {
             <input
               id="log-date"
               type="date"
-              value={playedAt}
-              onChange={(e) => setPlayedAt(e.target.value)}
-              className="w-full rounded-md border border-neutral-800 bg-neutral-950 px-3 py-2 text-sm text-white outline-none focus:ring-2 focus:ring-green-500"
+              value={today}
+              readOnly
+              className="w-full cursor-not-allowed rounded-md border border-neutral-800 bg-neutral-950 px-3 py-2 text-sm text-white opacity-60 outline-none focus:ring-2 focus:ring-green-500"
             />
           </div>
 
